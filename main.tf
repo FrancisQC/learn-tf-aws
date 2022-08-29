@@ -1,5 +1,5 @@
 terraform {
-    cloud {
+  cloud {
     organization = "Cashreturn"
     workspaces {
       name = "learn-tf-aws"
@@ -7,8 +7,10 @@ terraform {
   }
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
+      source     = "hashicorp/aws"
+      version    = "~> 4.16"
+      access_key = var.aws_access_key
+      secret_key = var.aws_secret_key
     }
   }
 
@@ -16,7 +18,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region = "us-west-2"
 }
 
 resource "aws_instance" "app_server" {
