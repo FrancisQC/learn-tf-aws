@@ -1,8 +1,8 @@
 terraform {
     cloud {
-    organization = "<ORG_NAME>"
+    organization = "Cashreturn"
     workspaces {
-      name = "Example-Workspace"
+      name = "learn-tf-aws"
     }
   }
   required_providers {
